@@ -6,18 +6,24 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      structure0: {
-        name: '77a Commercial',
-        nickname: 'Wharf House'
-      },
-      structure1: {
-        name: '82 Commercial',
-        nickname: 'Fillmore Miller House'
-      },
-      structure2: {
-        name: '117 Commerical',
-        nickname: '1 Engine Co. 1'
-      }
+      structures: [
+        {
+          id: 0,
+          name: "77a Commercial",
+          nickname: "Wharf House",
+        },
+        {
+          id: 1,
+          name: "82 Commercial",
+          nickname: "Fillmore Miller House",
+        },
+        {
+          
+          id: 2,
+          name: "117 Commerical",
+          nickname: "1 Engine Co. 1",
+        },
+      ],
     };
   }
 
@@ -25,9 +31,14 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Provincetown Structures</h1>
-        <h2>{this.state.structure0.name}</h2>
-        <h2>{this.state.structure1.name}</h2>
-        <h2>{this.state.structure2.name}</h2>
+        {this.state.structures.map((structure) => {
+          return (
+            <div key={structure.id}>
+              <h2>{structure.name}</h2>
+              <p>{structure.nickname}</p>
+            </div>
+          );
+        })}
       </div>
     );
   }
