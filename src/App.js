@@ -6,32 +6,28 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: "Brandon",
+      structure0: {
+        name: '77a Commercial',
+        nickname: 'Wharf House'
+      },
+      structure1: {
+        name: '82 Commercial',
+        nickname: 'Fillmore Miller House'
+      },
+      structure2: {
+        name: '117 Commerical',
+        nickname: '1 Engine Co. 1'
+      }
     };
   }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>Hi {this.state.name}</p>
-          <button
-            onClick={() => {
-              this.setState(
-                () => {
-                  return {
-                    name: "Marshal",
-                  };
-                },
-                () => {
-                  console.log(this.state);
-                }
-              );
-            }}
-          >
-            Change Name
-          </button>
-        </header>
+        <h1>Provincetown Structures</h1>
+        <h2>{this.state.structure0.name}</h2>
+        <h2>{this.state.structure1.name}</h2>
+        <h2>{this.state.structure2.name}</h2>
       </div>
     );
   }
