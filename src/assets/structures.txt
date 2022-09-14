@@ -1,18 +1,56 @@
       structures: [
         {
-          id: 0,
-          name: "77a Commercial",
-          nickname: "Wharf House",
-        },
+          "id": 1,
+          "name": "77a Commercial",
+          "nickname": "Wharf House",
+          "username": "77ac",
+          "email": "77ac@test.dev",
+          "address": {
+            "street": "77a Commercial St",
+            "city": "Provincetown",
+            "state": "Massachusetts",
+            "zipcode": "02657",
+            "geo": {
+              "lat": "23.688",
+              "lng": "42.9996"
+            }
+          },
+          "website": "https://ptownstructures.com",
+          },
         {
-          id: 1,
-          name: "82 Commercial",
-          nickname: "Fillmore Miller House",
-        },
+          "id": 2,
+          "name": "82 Commercial",
+          "nickname": "Fillmore Miller House",
+          "username": "82c",
+          "email": "82c@test.dev",
+          "address": {
+            "street": "82 Commercial St",
+            "city": "Provincetown",
+            "state": "Massachusetts",
+            "zipcode": "02657",
+            "geo": {
+              "lat": "23.688",
+              "lng": "42.9996"
+            }
+          },
+          "website": "https://ptownstructures.com",
+          },
         {
-          
-          id: 2,
-          name: "117 Commerical",
-          nickname: "1 Engine Co. 1",
-        },
+          "id": 3,
+          "name": "117 Commerical",
+          "nickname": "1 Engine Co. 1",
+          "username": "117c",
+          "email": "117c@test.dev",
+          "address": {
+            "street": "117 Commercial St",
+            "city": "Provincetown",
+            "state": "Massachusetts",
+            "zipcode": "02657",
+            "geo": {
+              "lat": "23.688",
+              "lng": "42.9996"
+            }
+          },
+          "website": "https://ptownstructures.com",
+          },
       ],
