@@ -6,24 +6,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      structures: [
-        {
-          id: 0,
-          name: "77a Commercial",
-          nickname: "Wharf House",
-        },
-        {
-          id: 1,
-          name: "82 Commercial",
-          nickname: "Fillmore Miller House",
-        },
-        {
-          
-          id: 2,
-          name: "117 Commerical",
-          nickname: "1 Engine Co. 1",
-        },
-      ],
+      structures: [ ],
     };
   }
 
