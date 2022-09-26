@@ -34,8 +34,9 @@ class App extends Component {
           type="search"
           placeholder="search addresses"
           onChange={(event) => {
+            const searchString = event.target.value.toLocaleLowerCase()
             const filteredStructures = this.state.structures.filter((address) => {
-              return address.name.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase());
+              return address.name.toLocaleLowerCase().includes(searchString);
             });
             this.setState(() => {
               return{structures: filteredStructures}
