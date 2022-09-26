@@ -7,6 +7,7 @@ class App extends Component {
     super();
     this.state = {
       structures: [],
+      searchString: " ",
     };
   }
 
@@ -26,6 +27,11 @@ class App extends Component {
   }
 
   render() {
+
+    const filteredStructures = this.state.structures.filter((address) => {
+      return address.name.toLocaleLowerCase().includes(this.state.searchString);
+    });
+
     return (
       <div className="App">
         <h1>Provincetown Structures</h1>
@@ -35,15 +41,12 @@ class App extends Component {
           placeholder="search addresses"
           onChange={(event) => {
             const searchString = event.target.value.toLocaleLowerCase()
-            const filteredStructures = this.state.structures.filter((address) => {
-              return address.name.toLocaleLowerCase().includes(searchString);
-            });
             this.setState(() => {
-              return{structures: filteredStructures}
+              return{searchString: searchString}
             })
           }}
         />
-        {this.state.structures.map((structure) => {
+        {filteredStructures.map((structure) => {
           return (
             <div key={structure.id}>
               <h2>{structure.name}</h2>
