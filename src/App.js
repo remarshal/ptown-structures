@@ -1,5 +1,6 @@
 import { Component } from "react";
-import logo from "./logo.svg";
+import CardList from "./Components/card-list/CardList";
+import SearchBox from "./Components/search-box/SearchBox";
 import "./App.css";
 
 class App extends Component {
@@ -27,14 +28,13 @@ class App extends Component {
   }
 
   onSearchChange = (event) => {
-    const searchString = event.target.value.toLocaleLowerCase()
+    const searchString = event.target.value.toLocaleLowerCase();
     this.setState(() => {
-      return{searchString: searchString}
-    })
-  }
+      return { searchString: searchString };
+    });
+  };
 
   render() {
-
     const filteredStructures = this.state.structures.filter((address) => {
       return address.name.toLocaleLowerCase().includes(this.state.searchString);
     });
@@ -48,14 +48,7 @@ class App extends Component {
           placeholder="search addresses"
           onChange={this.onSearchChange}
         />
-        {filteredStructures.map((structure) => {
-          return (
-            <div key={structure.id}>
-              <h2>{structure.name}</h2>
-              <p>{structure.address.street}</p>
-            </div>
-          );
-        })}
+        <CardList structures={filteredStructures} />
       </div>
     );
   }
