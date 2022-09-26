@@ -26,6 +26,13 @@ class App extends Component {
       );
   }
 
+  onSearchChange = (event) => {
+    const searchString = event.target.value.toLocaleLowerCase()
+    this.setState(() => {
+      return{searchString: searchString}
+    })
+  }
+
   render() {
 
     const filteredStructures = this.state.structures.filter((address) => {
@@ -39,12 +46,7 @@ class App extends Component {
           className="search-box"
           type="search"
           placeholder="search addresses"
-          onChange={(event) => {
-            const searchString = event.target.value.toLocaleLowerCase()
-            this.setState(() => {
-              return{searchString: searchString}
-            })
-          }}
+          onChange={this.onSearchChange}
         />
         {filteredStructures.map((structure) => {
           return (
