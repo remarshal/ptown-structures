@@ -45,7 +45,7 @@ class App extends Component {
         <input
           className="search-box"
           type="search"
-          placeholder="search addresses"
+          placeholder="search structures"
           onChange={this.onSearchChange}
         />
         <CardList structures={filteredStructures} />
