@@ -16,14 +16,9 @@ class App extends Component {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((users) =>
-        this.setState(
-          () => {
-            return { structures: users };
-          },
-          () => {
-            console.log(this.state);
-          }
-        )
+        this.setState(() => {
+          return { structures: users };
+        })
       );
   }
 
@@ -42,12 +37,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Provincetown Structures</h1>
-        <input
-          className="search-box"
-          type="search"
-          placeholder="search structures"
-          onChange={this.onSearchChange}
-        />
+        <SearchBox onChangeHandler={this.onSearchChange} />
         <CardList structures={filteredStructures} />
       </div>
     );
