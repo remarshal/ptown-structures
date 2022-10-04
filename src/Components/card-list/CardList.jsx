@@ -4,11 +4,11 @@ import './cardList.css';
 class CardList extends Component {
     render() {
         return (
-            <div>
+            <div className='card-list'>
                 {this.props.structures.map((structure) => {
                     return (
-                        <div key={structure.id}>
-                            <img alt={`structure ${structure.name}`} src={`https://robohash.org/${structure.id}?set=set4&size=180x180`} />
+                        <div className='card-container' key={structure.id}>
+                            <img alt={`structure ${structure.name}`} src={`https://robohash.org/${structure.id}?set=set4`} />
                             <h2>{structure.name}</h2>
                             <p>{structure.address.street}</p>
                         </div>
