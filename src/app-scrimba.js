@@ -1,25 +1,55 @@
 import React, { Component } from "react";
 import "./App.css";
 
-function App() {
-  const [goOut, setGoOut] = React.useState("Yes");
+// convert to Class
+// function App() {
+//   const [goOut, setGoOut] = React.useState("Yes");
 
-  function toggleGoOut() {
-    setGoOut((prevState) => {
-      return prevState === "Yes" ? "No" : "Yes";
-    });
-  }
+//   function toggleGoOut() {
+//     setGoOut((prevState) => {
+//       return prevState === "Yes" ? "No" : "Yes";
+//     });
+//   }
 
-  return (
-    <div className="state">
-      <h1 className="state--title">Should I go walk at lunch?</h1>
-      <button className="state--value button" onClick={toggleGoOut}>
-        {goOut}
-      </button>
-    </div>
-  );
+//   return (
+//     <div className="state">
+//       <h1 className="state--title">Should I learn more React?</h1>
+//       <button className="state--value button" onClick={toggleGoOut}>
+//         {goOut}
+//       </button>
+//     </div>
+//   );
+// }
+
+class App extends Component {
+    constructor() {
+        super();
+        this.state = {
+            goOut: "Yes"
+        };
+      }
+
+    // arrow function required
+    toggleGoOut  = () =>  {
+        this.setState(prevState => {
+            // state must be in object format
+            return {
+                goOut: prevState.goOut === "Yes" ? "No" : "Yes"
+            }
+        });
+    }
+    
+    render() {
+
+        return (
+            <div className="state">
+            <h1 className="state--title">Should I learn more React?</h1>
+            <button className="state--value button" onClick={this.toggleGoOut}>
+              {this.state.goOut}
+            </button>
+          </div>
+        )
+    }
 }
-
-// ReactDOM.render(<App />, document.getElementById("root"));
 
 export default App;
