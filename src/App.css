@@ -16,3 +16,8 @@ h1 {
   font-size:4em;
   color: white;
 }
+
+button {
+  font-size: x-large;
+  color: blueviolet;
+}
