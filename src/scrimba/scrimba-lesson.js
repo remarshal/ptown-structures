@@ -49,3 +49,41 @@ export default class App extends React.Component {
             );
         }
     };
+
+
+    // 2nd example
+    class App extends React.Component {
+        state = {
+            character: {}
+        }
+        
+        /**
+         * Challenge:
+         * 
+         * Save the Star Wars character object in state! Then,
+         * display the `name` property of the character on the
+         * screen.
+         */
+        
+        componentDidMount() {
+            console.log("componentDidMount")
+            fetch("https://swapi.dev/api/people/1")
+                .then(res => res.json())
+                .then(data => {
+                    this.setState({character: data})
+                })
+        }
+        
+        // same as using in functional component
+        React.useEffect(() => {
+            // Your code here
+        }, []) 
+        
+        render() {
+            console.log("render")
+            return (
+                <h1>{`Hello ${this.state.character.name}`}</h1>
+            )
+        }
+    }
+    
