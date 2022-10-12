@@ -28,10 +28,10 @@ state = {
 
     // arrow function required
     toggleGoOut  = () =>  {
-        this.setState(prevState => {
+        this.setState(prevAnswer => {
             // state must be in object format
             return {
-                goOut: prevState.goOut === "Yes" ? "No" : "Yes"
+                goOut: prevAnswer.goOut === "Yes" ? "No" : "Yes"
             }
         });
     }
